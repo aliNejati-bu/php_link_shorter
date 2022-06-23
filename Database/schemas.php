@@ -44,8 +44,6 @@ Capsule::schema()->create('email_links', function (\Illuminate\Database\Schema\B
 });
 
 
-
-
 Capsule::schema()->create('news', function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
     $blueprint->string("slug")->unique();
@@ -94,6 +92,16 @@ Capsule::schema()->create("user_session_activities", function (\Illuminate\Datab
     $blueprint->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
 });
 
+
+Capsule::schema()->create("links", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
+    $blueprint->id();
+    $blueprint->bigInteger("user_id")->unsigned();
+    $blueprint->string("slug")->unique();
+    $blueprint->string("target");
+    $blueprint->timestamps();
+
+    $blueprint->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
+});
 
 
 // TODO: تنظیم محدودیت های دیتا بیسی روی داده ها

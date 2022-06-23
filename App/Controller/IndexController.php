@@ -15,9 +15,7 @@ class IndexController
 {
     public function getIndex(): ViewEngine
     {
-        var_dump($_SESSION);
-        die();
-        return view("index", compact("name"));
+        return view("index");
     }
 
     public function getSignUp(): ViewEngine

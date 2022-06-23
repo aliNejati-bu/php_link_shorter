@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'Persia';
+    src: url('../fonts/Persia.eot?#') format('eot'), url('../fonts/Persia.woff') format('woff'), url('../fonts/Persia.ttf') format('truetype');
+    font-display: swap
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-btn: #ce4407;
+    --color-btn-hover: #b23c04;
+    --color-text-btn-data: #a05c30;
+    --color-btn-data: white;
+    --color-btn-data-hover: #f2f2f2;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Persia';
+    background: url("../images/mark-harpur-HUOvKWXEdFY-unsplash.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    direction: rtl;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    flex-basis: 800px;
+    border-radius: 10px;
+    padding: 4rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    width: 80rem;
+    top: -100%;
+    opacity: 0;
+}
+
+
+.open {
+    top: 25%;
+    opacity: 1;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    margin: 3rem 0;
+    background: white;
+    direction: ltr;
+    padding: 1rem 1rem;
+    border-radius: 5rem;
+}
+
+
+.input-group .text-input {
+    flex-grow: 1;
+    border: none;
+    font-family: Persia;
+    outline: none;
+    width: 0;
+    padding: 0.5rem 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5rem;
+    font-family: Persia;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.btn-orange {
+    background: var(--color-btn);
+    color: white;
+}
+
+.btn-orange:hover {
+    background: var(--color-btn-hover);
+}
+
+.wrapper > h1 {
+    color: white;
+}
+
+
+.btn-data {
+    padding: 1.5rem 3.5rem;
+    color: var(--color-text-btn-data);
+    background: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.btn-data:hover {
+    background: var(--color-btn-data-hover);
+}
+
+
+.qr-code {
+    margin: 3rem 0;
+    width: 25%;
+}
+
+
+.link-box {
+    margin: 0rem 0 3rem;
+    direction: ltr;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.link-text{
+    color: white;
+    text-decoration: underline;
+}
+
+.btn-copy {
+    background: #f2f2f2;
+    color: #a05c30;
+}
+
+
+.container--link.open{
+    top: 15%;
+}
+
+
+@media screen and (max-width: 850px) {
+    .container {
+        width: 500px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .container {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+        width: 300px;
+    }
+    .btn-data{
+        margin: 0.5rem 1rem;
+    }
+}
+
+
+
+@media screen and (max-width: 700px) {
+    body {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+    }
+
+
+    .container{
+        padding: 2rem;
+    }
+    .btn-data {
+        padding: 1rem 2rem;
+    }
+}
+
+
+.rtl{
+    direction: rtl;
+}
+
+
+.about-text{
+    color: white;
+    margin: 2rem 0;
+}
