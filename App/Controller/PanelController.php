@@ -2,6 +2,7 @@
 
 namespace Electro\App\Controller;
 
+use Electro\Classes\Exception\ValidatorNotFoundException;
 use Electro\Classes\Redirect;
 use Electro\Classes\ViewEngine;
 
@@ -13,7 +14,19 @@ class PanelController
      */
     public function index(): ViewEngine|Redirect
     {
-        $currentPage = "panel";
-        return view("panel>panel", compact("currentPage"));
+        return view("panel>panel");
     }
+
+    /**
+     * @throws ValidatorNotFoundException
+     */
+    public function postSimpleLink()
+    {
+        request()->validatePostsAndFiles("createLink");
+
+        $slug = getRandomString(5);
+
+
+    }
+
 }

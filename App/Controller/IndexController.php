@@ -13,9 +13,9 @@ use Electro\Classes\ViewEngine;
 
 class IndexController
 {
-    public function getIndex(): ViewEngine
+    public function getIndex(): Redirect
     {
-        return view("index");
+        return \redirect(route("panel"));
     }
 
     public function getSignUp(): ViewEngine

@@ -1,89 +1,46 @@
-<!DOCTYPE html>
-<html lang="fa">
-
+<!doctype html>
+<html lang="en">
 <head>
-    <?php require $base . $dirSep . "components" . $dirSep . "toastCss.php" ?>
-    <?php require viewPath("panel>layout>heade")?>
-    <title>panel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/assets/css/toastr.min.css">
+    <title>کوتاه کننده لینک</title>
 </head>
-
 <body>
-
-<!-- Begin page -->
-<div id="wrapper">
-
-
-    <!-- Topbar Start -->
-    <?php require viewPath("panel>layout>nav")?>
-    <!-- end Topbar -->
-
-
-    <!-- ========== Left Sidebar Start ========== -->
-    <?php require viewPath("panel>sideMenu")?>
-    <!-- Left Sidebar End -->
-
-    <!-- ============================================================== -->
-    <!-- Start Page Content here -->
-    <!-- ============================================================== -->
-
-    <div class="content-page">
-        <div class="content">
-
-            <!-- Start Content-->
-            <div class="container-fluid">
-
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                                <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">ادمینکس</a></li>
-                                    <li class="breadcrumb-item"><a href="javascript: void(0);">صفحات</a></li>
-                                    <li class="breadcrumb-item active">صفحه شروع</li>
-                                </ol>
-                            </div>
-                            <h4 class="page-title">صفحه شروع (خالی)</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- end page title -->
-
-
-
-            </div> <!-- end container-fluid -->
-
-        </div> <!-- end content -->
-
-
-
-        <!-- Footer Start -->
-        <?php require viewPath("panel>layout>footer")?>
-        <!-- end Footer -->
-
+<div class="container open" id="main-container">
+    <div class="wrapper">
+        <h1>لوگوی ما</h1>
+        <div class="input-group">
+            <input placeholder="http://exmple.com" type="text" class="text-input">
+            <button class="btn btn-orange" id="btn">ایجاد لینک</button>
+        </div>
+        <div class="btn-box">
+            <button class="btn btn-data">ورود / ثبت نام</button>
+            <button class="btn btn-data">ایجاد با slug دلخواه</button>
+        </div>
     </div>
-
-    <!-- ============================================================== -->
-    <!-- End Page content -->
-    <!-- ============================================================== -->
-
 </div>
-<!-- END wrapper -->
+<!--<div class="container container--link" id="link-container">
+    <div class="wrapper">
+        <h1>لینک کوتاه ایجاد شد</h1>
+        <img src="images/download.gif" class="qr-code" alt="">
+        <div class="link-box">
+            <span class="link-text">
+                http://exmple.com
+            </span>
+            <button class="btn btn-copy">کپی لینک</button>
+        </div>
+        <div class="btn-box">
+            <button class="btn btn-data">ایجاد با رول</button>
+            <button class="btn btn-data">ایجاد با بارکد</button>
+        </div>
+    </div>
+</div>-->
 
-<!-- Vendor js -->
-<script src="/assets/js/vendor.min.js"></script>
+<script src="js/main.js"></script>
 
-<!--C3 Chart-->
-<script src="/assets/libs/d3/d3.min.js"></script>
-<script src="/assets/libs/c3/c3.min.js"></script>
-
-<script src="/assets/libs/echarts/echarts.min.js"></script>
-
-<script src="/assets/js/pages/dashboard.init.js"></script>
-
-<!-- App js -->
-<script src="/assets/js/app.min.js"></script>
-<?php require $base . $dirSep . "components" . $dirSep . "toastsJs.php" ?>
 </body>
-
 </html>

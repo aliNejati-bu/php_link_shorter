@@ -156,4 +156,12 @@ class User extends Model
             return $this->slugs()->count() < 5;
         }
     }
+
+    /**
+     * @return HasMany
+     */
+    public function links(): HasMany
+    {
+        return $this->hasMany(Link::class);
+    }
 }
