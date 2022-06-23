@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/toastr.min.css">
 
-    <title>کوتاه کننده لینک</title>
+    <title>ثبت نام</title>
 
 </head>
 <body>
@@ -16,7 +16,7 @@
 <div class="container open" id="main-container">
     <form method="post">
         <div class="wrapper">
-            <h1>ورود</h1>
+            <h1>ثبت نام</h1>
             <div class="input-group rtl">
                 <input placeholder="نام" type="text" name="name" class="text-input">
             </div>
