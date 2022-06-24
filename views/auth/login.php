@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -25,7 +25,7 @@
             </div>
             <div class="btn-box">
                 <button class="btn btn-data" type="submit">ورود</button>
-                <a href="<?= route("signUp") ?>" class="btn btn-data">ورود</a>
+                <a href="<?= route("signup") ?>" class="btn btn-data">ثبت نام</a>
             </div>
         </div>
     </form>

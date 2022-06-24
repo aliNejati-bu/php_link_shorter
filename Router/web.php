@@ -19,6 +19,10 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     $router->controller("/user", \Electro\App\Controller\Admin\UserController::class
     );
 
+    $router->post("/simple-link",function (){
+        return (new PanelController())->postSimpleLink();
+    });
+
 
 
 });
