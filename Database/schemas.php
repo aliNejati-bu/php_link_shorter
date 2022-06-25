@@ -104,4 +104,12 @@ Capsule::schema()->create("links", function (\Illuminate\Database\Schema\Bluepri
 });
 
 
+Capsule::schema()->create("clicks", function (\Illuminate\Database\Schema\Blueprint $blueprint) {
+    $blueprint->id();
+    $blueprint->bigInteger("link_id")->unsigned();
+    $blueprint->timestamps();
+
+    $blueprint->foreign("link_id")->references("id")->on("links")->onDelete("cascade");
+});
+
 // TODO: تنظیم محدودیت های دیتا بیسی روی داده ها
