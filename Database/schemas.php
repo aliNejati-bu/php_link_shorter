@@ -13,7 +13,7 @@ Capsule::schema()->create('users', function (\Illuminate\Database\Schema\Bluepri
      * 1: silver
      * 2: gold
      */
-    $blueprint->enum("user_type", [0, 1, 2])->default(0);
+    $blueprint->boolean("user_type")->default(false);
     $blueprint->boolean("is_phone_verified")->default(false);
     $blueprint->boolean("is_email_verified")->default(false);
     $blueprint->boolean("is_super_admin")->default(false);

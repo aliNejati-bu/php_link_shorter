@@ -23,6 +23,17 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         return (new PanelController())->postSimpleLink();
     });
 
+    $router->post("/advance-link", function () {
+        return (new PanelController())->postAdvanceLink();
+    });
+
+    $router->get("/advance-link", function () {
+        if (!auth()->userModel->user_type) {
+            return \redirect(back())->with("e", "برای ایجاد لینک با اسلاگ دلخواه باید حساب طلایی داشته باشید");
+        }
+        return view("panel>advanceLink");
+    });
+
 
 });
 

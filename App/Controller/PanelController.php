@@ -46,4 +46,30 @@ class PanelController
         return view("panel>showLink", compact("slug"));
     }
 
+    public function postAdvanceLink()
+    {
+        request()->validatePostsAndFiles("createAdvanceLinkValidator");
+
+        if (!auth()->userModel->user_type) {
+            return \redirect(back())->with("e", "برای ایجاد لینک با اسلاگ دلخواه باید حساب طلایی داشته باشید");
+        }
+
+        if (!startsWith(request()->getValidated()["link"], "https://") && !startsWith(request()->getValidated()["link"], "http://")) {
+            $link = "https://" . request()->getValidated()["link"];
+        } else {
+            $link = request()->getValidated()["link"];
+        }
+        Link::query()->create([
+            "user_id" => auth()->userModel->id,
+            "slug" => request()->getValidated()["slug"],
+            "target" => $link
+        ]);
+
+        $slug = request()->getValidated()["slug"];
+
+        return view("panel>showLink", compact("slug"));
+
+
+    }
+
 }

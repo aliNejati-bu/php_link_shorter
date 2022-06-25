@@ -12,16 +12,16 @@ class UserSeeder
             [
                 "user_email" => "electrocellco@gmail.com",
                 "password" => "13811381my",
-                "user_type" => 3,
+                "user_type" => true,
                 "is_email_verified" => true,
                 "is_super_admin" => true,
                 "is_admin" => true,
                 "roles" => [],
                 "name" => "علی نجاتی"
-            ],[
+            ], [
                 "user_email" => "test@gmail.com",
                 "password" => "13811381my",
-                "user_type" => 3,
+                "user_type" => true,
                 "is_email_verified" => true,
                 "is_super_admin" => false,
                 "is_admin" => true,
@@ -30,7 +30,7 @@ class UserSeeder
             ],
         ];
 
-        foreach ($users as $user){
+        foreach ($users as $user) {
             $u = User::create($user);
             $u->roles()->attach($user["roles"]);
         }

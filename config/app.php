@@ -10,6 +10,7 @@ return [
         'login' => '/login',
         'panel' => '/panel',
         'userList' => '/panel/user',
-        'createSimpleLink' => '/panel/simple-link'
+        'createSimpleLink' => '/panel/simple-link',
+        'createAdvanceLink' => '/panel/advance-link',
     ],
 ];

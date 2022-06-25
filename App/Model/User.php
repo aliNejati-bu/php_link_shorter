@@ -143,19 +143,6 @@ class User extends Model
     }
 
 
-    /**
-     * @return bool
-     */
-    public function canCreateSlug(): bool
-    {
-        if ($this->user_type == 2) {
-            return true;
-        } elseif ($this->user_type == 1) {
-            return $this->slugs()->count() < 30;
-        } else {
-            return $this->slugs()->count() < 5;
-        }
-    }
 
     /**
      * @return HasMany

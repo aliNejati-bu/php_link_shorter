@@ -5,8 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/toastr.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/toastr.min.css">
     <title>کوتاه کننده لینک</title>
 </head>
 <body>
@@ -22,11 +22,11 @@
         </form>
         <div class="btn-box">
             <button class="btn btn-data">ورود / ثبت نام</button>
-            <button class="btn btn-data">ایجاد با slug دلخواه</button>
+            <a href="<?= route("createAdvanceLink") ?>" class="btn btn-data">ایجاد با slug دلخواه</a>
         </div>
     </div>
 </div>
-<script src="js/jquery-2.2.4.min.js"></script>
+<script src="/js/jquery-2.2.4.min.js"></script>
 <?php require viewPath("components>toastsJs") ?>
 </body>
 </html>
