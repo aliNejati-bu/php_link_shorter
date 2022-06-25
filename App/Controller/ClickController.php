@@ -31,4 +31,19 @@ class ClickController
         return \redirect($link->target);
 
     }
+
+    public function showLinkStats(string $slug)
+    {
+        /**
+         * @var Link $link
+         */
+        $link = Link::query()->where("slug", $slug)->first();
+
+        if (!$link) {
+            http_response_code(404);
+            return view(get404ViewName());
+        }
+/*        if (!auth()->userModel->)*/
+    }
+    
 }
