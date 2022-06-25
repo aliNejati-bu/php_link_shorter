@@ -9,6 +9,7 @@ use Electro\Classes\ViewEngine;
 class ClickController
 {
     /**
+     * @param string $slug
      * @return Redirect|ViewEngine
      */
     public function index(string $slug): Redirect|ViewEngine

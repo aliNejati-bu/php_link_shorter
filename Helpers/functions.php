@@ -185,5 +185,18 @@ function messages(): mixed
  */
 function getStartDay(): string
 {
-    return date("Y-m-d H:i:s",strtotime("today"));
+    return date("Y-m-d H:i:s", strtotime("today"));
+}
+
+// Function to check string starting
+// with given substring
+/**
+ * @param $string
+ * @param $startString
+ * @return bool
+ */
+function startsWith($string, $startString): bool
+{
+    $len = strlen($startString);
+    return (substr($string, 0, $len) === $startString);
 }

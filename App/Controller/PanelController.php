@@ -21,12 +21,17 @@ class PanelController
     /**
      * @throws ValidatorNotFoundException
      */
-    public function postSimpleLink()
+    public function postSimpleLink(): ViewEngine
     {
         request()->validatePostsAndFiles("createLink");
 
         $slug = getRandomString(5);
 
+        if (!startsWith(request()->getValidated()["link"], "https://") && !startsWith(request()->getValidated()["link"], "http://")) {
+            $link = "https://" . request()->getValidated()["link"];
+        } else {
+            $link = request()->getValidated()["link"];
+        }
 
         while (Link::query()->where("slug", $slug)->first()) {
             $slug = getRandomString(5);
@@ -35,10 +40,10 @@ class PanelController
         Link::query()->create([
             "user_id" => auth()->userModel->id,
             "slug" => $slug,
-            "target" => request()->getValidated()["link"]
+            "target" => $link
         ]);
 
-        return view("panel>showLink",compact("slug"));
+        return view("panel>showLink", compact("slug"));
     }
 
 }

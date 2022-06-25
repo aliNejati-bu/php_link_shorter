@@ -27,5 +27,5 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
 });
 
 $router->get("/{slug}", function ($slug) {
-    (new ClickController())->index($slug);
+    return (new ClickController())->index($slug);
 });
