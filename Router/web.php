@@ -40,3 +40,7 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
 $router->get("/{slug}", function ($slug) {
     return (new ClickController())->index($slug);
 });
+
+$router->get("/{slug}/stats", function ($slug) {
+    return (new ClickController())->showLinkStats($slug);
+}, ["before" => ["authMiddleware"]]);

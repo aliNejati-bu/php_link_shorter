@@ -32,7 +32,11 @@ class ClickController
 
     }
 
-    public function showLinkStats(string $slug)
+    /**
+     * @param string $slug
+     * @return ViewEngine
+     */
+    public function showLinkStats(string $slug): ViewEngine
     {
         /**
          * @var Link $link
@@ -43,7 +47,15 @@ class ClickController
             http_response_code(404);
             return view(get404ViewName());
         }
-/*        if (!auth()->userModel->)*/
+        if (!auth()->userModel->user_type & $link->user->id != auth()->userModel->id) {
+            http_response_code(404);
+            return view(get404ViewName());
+        }
+
+        $all = $link->clicks()->count();
+        $daily = $link->clicks()->where("created_at", ">", getStartDay())->count();
+        return view("panel>stats", compact("daily", "all", "slug"));
+
     }
-    
+
 }

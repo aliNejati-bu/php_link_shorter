@@ -21,7 +21,7 @@
             </span>
             <button class="btn btn-copy">کپی لینک</button>
         </div>
-        <div class="btn-box">
+        <div class="btn-box stats">
             <span>
                 کلیک در 24 ساعت گذشته :
                 <?= $daily ?>

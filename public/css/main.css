@@ -199,3 +199,10 @@ body {
     color: white;
     margin: 2rem 0;
 }
+
+.stats{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+}
