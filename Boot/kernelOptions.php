@@ -7,5 +7,6 @@ return [
         'authMiddleware' => \Electro\App\Middleware\AuthMiddleware::class,
         'apiAuthMiddleware' => \Electro\App\Middleware\ApiAuthMiddleware::class,
         'onlyVerifyPhone' => \Electro\App\Middleware\OnlyVerifyPhoneMiddleware::class,
+        'superAdminMiddleware' => \Electro\App\Middleware\SupperAdminMiddleware::class,
     ]
 ];

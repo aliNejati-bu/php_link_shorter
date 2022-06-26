@@ -206,3 +206,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.admin-body{
+    background: url("../images/adminbg.jpg");
+    background-size: cover;
+}

@@ -35,6 +35,12 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     });
 
 
+    $router->group(["before" => "superAdminMiddleware"], function (RouteCollector $router) {
+        $router->get("/admin",function (){
+            return (new \Electro\App\Controller\Admin\AdminController())->index();
+        });
+    });
+
 });
 
 $router->get("/{slug}", function ($slug) {
