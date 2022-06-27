@@ -55,13 +55,7 @@ class User extends Model
         return $this->hasMany(Slug::class);
     }
 
-    /**
-     * @return HasMany
-     */
-    public function news(): HasMany
-    {
-        return $this->hasMany(News::class);
-    }
+
 
 
     /**

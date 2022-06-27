@@ -110,6 +110,7 @@ body {
     margin: 0 1rem;
     text-decoration: none;
     font-size: 1.4rem;
+    display: inline-block;
 }
 
 .btn-data:hover {
@@ -210,4 +211,5 @@ body {
 .admin-body{
     background: url("../images/adminbg.jpg");
     background-size: cover;
+    overflow: scroll;
 }

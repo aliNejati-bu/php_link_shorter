@@ -47,12 +47,10 @@ Capsule::schema()->create('email_links', function (\Illuminate\Database\Schema\B
 Capsule::schema()->create('news', function (\Illuminate\Database\Schema\Blueprint $blueprint) {
     $blueprint->id();
     $blueprint->string("slug")->unique();
-    $blueprint->bigInteger("user_id")->unsigned();
     $blueprint->string("title");
     $blueprint->text("content");
+    $blueprint->string("image");
     $blueprint->timestamps();
-    $blueprint->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
-
 });
 
 Capsule::schema()->create('roles', function (\Illuminate\Database\Schema\Blueprint $blueprint) {

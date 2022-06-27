@@ -12,5 +12,7 @@ return [
         'userList' => '/panel/user',
         'createSimpleLink' => '/panel/simple-link',
         'createAdvanceLink' => '/panel/advance-link',
+        'adminPanel' => '/panel/admin',
+        'createPost' => '/panel/admin/createPost',
     ],
 ];

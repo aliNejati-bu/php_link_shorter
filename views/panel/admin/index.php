@@ -12,17 +12,9 @@
 <body class="admin-body">
 <div class="container open" id="main-container">
     <div class="wrapper">
-        <h1>لوگوی ما</h1>
-        <form method="post" action="<?= route("createSimpleLink") ?>">
-            <div class="input-group">
-
-                <input name="link" placeholder="http://exmple.com" type="text" class="text-input">
-                <button type="submit" class="btn btn-orange" id="btn">ایجاد لینک</button>
-            </div>
-        </form>
+        <h1>پنل مدیریت</h1>
         <div class="btn-box">
-            <button class="btn btn-data">ورود / ثبت نام</button>
-            <a href="<?= route("createAdvanceLink") ?>" class="btn btn-data">ایجاد با slug دلخواه</a>
+            <a href="<?= route("createPost") ?>" class="btn btn-data" style="margin-top: 3rem;width: 100%;color: #2F96B4;">ایجاد پست وبلاگ جدید</a>
         </div>
     </div>
 </div>

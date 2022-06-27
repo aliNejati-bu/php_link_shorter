@@ -17,17 +17,10 @@ class News extends Model
 
     protected $fillable = [
         "slug",
-        "user_id",
         "title",
-        "content"
+        "content",
+        "image"
     ];
 
 
-    /**
-     * @return BelongsTo
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
 }
