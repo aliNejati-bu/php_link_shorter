@@ -14,5 +14,7 @@ return [
         'createAdvanceLink' => '/panel/advance-link',
         'adminPanel' => '/panel/admin',
         'createPost' => '/panel/admin/createPost',
+        'blog' => '/blog',
+        'post' => '/blog/post/!-!'
     ],
 ];

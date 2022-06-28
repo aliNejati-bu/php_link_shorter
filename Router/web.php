@@ -49,6 +49,10 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
 
 });
 
+$router->get("/blog",function (){
+    return (new \Electro\App\Controller\BlogController())->index();
+});
+
 $router->get("/{slug}", function ($slug) {
     return (new ClickController())->index($slug);
 });
