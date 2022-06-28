@@ -53,6 +53,10 @@ $router->get("/blog",function (){
     return (new \Electro\App\Controller\BlogController())->index();
 });
 
+$router->get("/blog/post/{slug}",function ($slug){
+    return (new \Electro\App\Controller\BlogController())->post($slug);
+});
+
 $router->get("/{slug}", function ($slug) {
     return (new ClickController())->index($slug);
 });

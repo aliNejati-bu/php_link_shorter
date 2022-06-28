@@ -1,16 +1,17 @@
-
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
-    <title>وبلاگ ما</title>
+    <title><?= $post->title ?></title>
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="/css/font-awesome.css" rel="stylesheet" type="text/css">
     <link href='https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css' rel='stylesheet' type='text/css'>
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!--[if IE]>
-    <style type="text/css">.pie {behavior:url(PIE.htc);}</style>
+    <style type="text/css">.pie {
+        behavior: url(PIE.htc);
+    }</style>
     <![endif]-->
     <!--[if lt IE 9]>
     <script src="/js/respond-1.1.0.min.js"></script>
@@ -51,7 +52,11 @@
         <div class="col-md-3">
             <div class="sidebar">
                 <div class="sidebar-text">
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. </p>
+                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
+                        مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه
+                        درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری
+                        را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. </p>
                 </div>
                 <div class="sidebar-social">
                     <ul>
@@ -98,26 +103,20 @@
             </div>
         </div>
         <div class="col-md-9">
-            <?php  foreach ($posts as $post): ?>
-                <div class="col-md-4">
-                    <a href="<?= route('post',$post->slug) ?>">
-                        <div class="post-content">
-                            <figure>
-                                <img src="<?= $post->image ?>">
-                                <figcaption class="hover-fig">
-                                    <i class="fa fa-plus"></i>
-                                </figcaption>
-                                <figcaption class="date-fig">
-                                    <span><?= $post->created_at ?></span>
-                                    <i class="fa fa-date"></i>
-                                </figcaption>
-                            </figure>
-                            <p><?= $post->title ?></p>
-                        </div>
-                    </a>
+            <div class="col-md-12">
+                <div class="single-content">
+                    <div class="single-img">
+                        <img src="/<?= $post->image ?>">
+                    </div>
+                    <div class="single-title">
+                        <h1><?= $post->title ?></h1>
+                    </div>
+                    <p><?= $post->content ?></p>
+                    <hr>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
+
     </div>
 </div>
 <br><br>
