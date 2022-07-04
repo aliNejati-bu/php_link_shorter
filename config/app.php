@@ -15,6 +15,8 @@ return [
         'adminPanel' => '/panel/admin',
         'createPost' => '/panel/admin/createPost',
         'blog' => '/blog',
-        'post' => '/blog/post/!-!'
+        'post' => '/blog/post/!-!',
+        'upgrade' => '/panel/upgrade',
+        'verifyPr' => '/panel/verifyPr'
     ],
 ];

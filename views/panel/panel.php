@@ -21,7 +21,7 @@
             </div>
         </form>
         <div class="btn-box">
-            <button class="btn btn-data">ورود / ثبت نام</button>
+            <a href="<?= route("upgrade") ?>" class="btn btn-data">پرداخت و ارتقا به حساب کاربری (10000 تومان)</a>
             <a href="<?= route("createAdvanceLink") ?>" class="btn btn-data">ایجاد با slug دلخواه</a>
         </div>
     </div>

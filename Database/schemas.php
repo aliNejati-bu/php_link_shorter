@@ -19,6 +19,7 @@ Capsule::schema()->create('users', function (\Illuminate\Database\Schema\Bluepri
     $blueprint->boolean("is_super_admin")->default(false);
     $blueprint->boolean("is_admin")->default(false);
     $blueprint->string("name");
+    $blueprint->string("transaction_id")->unique()->nullable();
     $blueprint->timestamps();;
 });
 

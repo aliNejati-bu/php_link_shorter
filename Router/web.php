@@ -27,6 +27,14 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         return (new PanelController())->postAdvanceLink();
     });
 
+    $router->get("/upgrade", function () {
+        return (new PanelController())->upgrade();
+    });
+
+    $router->get("/verifyPr", function () {
+        return (new PanelController())->verifyPayment();
+    });
+
     $router->get("/advance-link", function () {
         if (!auth()->userModel->user_type) {
             return \redirect(back())->with("e", "برای ایجاد لینک با اسلاگ دلخواه باید حساب طلایی داشته باشید");
@@ -36,24 +44,24 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
 
 
     $router->group(["before" => "superAdminMiddleware"], function (RouteCollector $router) {
-        $router->get("/admin",function (){
+        $router->get("/admin", function () {
             return (new \Electro\App\Controller\Admin\AdminController())->index();
         });
-        $router->get("/admin/createPost",function (){
+        $router->get("/admin/createPost", function () {
             return (new \Electro\App\Controller\Admin\AdminController())->createPostFront();
         });
-        $router->post("/admin/createPost",function (){
+        $router->post("/admin/createPost", function () {
             return (new \Electro\App\Controller\Admin\AdminController())->createPost();
         });
     });
 
 });
 
-$router->get("/blog",function (){
+$router->get("/blog", function () {
     return (new \Electro\App\Controller\BlogController())->index();
 });
 
-$router->get("/blog/post/{slug}",function ($slug){
+$router->get("/blog/post/{slug}", function ($slug) {
     return (new \Electro\App\Controller\BlogController())->post($slug);
 });
 
