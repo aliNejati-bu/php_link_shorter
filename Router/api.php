@@ -1,8 +1,7 @@
 <?php
-
-use Phroute\Phroute\RouteCollector;
-
 /**
  * @var RouteCollector $router
  */
+
+use Phroute\Phroute\RouteCollector;
 

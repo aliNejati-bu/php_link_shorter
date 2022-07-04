@@ -5,7 +5,6 @@ namespace Electro\Classes;
 class Cookie
 {
 
-
     /**
      * @var Cookie|null
      */

@@ -1,5 +1,4 @@
 <?php
-
 use Phroute\Phroute\RouteCollector;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Electro\Classes\Exception\ViewNotFoundedException;

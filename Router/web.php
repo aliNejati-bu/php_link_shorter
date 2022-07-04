@@ -1,13 +1,11 @@
 <?php
-
-use Electro\App\Controller\ClickController;
-use Phroute\Phroute\RouteCollector;
-use Electro\App\Controller\PanelController;
-
 /**
  * @var RouteCollector $router
  */
 
+use Electro\App\Controller\ClickController;
+use Phroute\Phroute\RouteCollector;
+use Electro\App\Controller\PanelController;
 
 $router->controller(route("index"), \Electro\App\Controller\IndexController::class);
 
@@ -54,7 +52,6 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
             return (new \Electro\App\Controller\Admin\AdminController())->createPost();
         });
     });
-
 });
 
 $router->get("/blog", function () {

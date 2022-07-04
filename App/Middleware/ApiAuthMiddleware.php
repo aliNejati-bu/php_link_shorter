@@ -2,11 +2,15 @@
 
 namespace Electro\App\Middleware;
 
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
-use Electro\Classes\Auth;
-use Electro\Classes\Config;
-use Electro\Classes\Request;
+use Firebase\JWT\{
+    JWT,
+    Key
+};
+use Electro\Classes\{
+    Auth,
+    Config,
+    Request
+};
 
 class ApiAuthMiddleware implements \Electro\Boot\Interfaces\MiddlewareInterface
 {

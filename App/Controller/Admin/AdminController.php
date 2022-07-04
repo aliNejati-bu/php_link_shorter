@@ -1,5 +1,4 @@
 <?php
-
 namespace Electro\App\Controller\Admin;
 
 use Electro\App\Model\News;
@@ -39,5 +38,4 @@ class AdminController
         News::query()->create($data);
         return redirect(back())->withMessage("m", "پست ایجاد.");
     }
-
 }

@@ -2,14 +2,13 @@
 
 namespace Electro\App\Controller;
 
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
 use Electro\App\Model\User;
-use Electro\Classes\Auth;
-use Electro\Classes\Exception\ValidatorNotFoundException;
-use Electro\Classes\Redirect;
-use Electro\Classes\Request;
-use Electro\Classes\ViewEngine;
+use Electro\Classes\{
+    Exception\ValidatorNotFoundException,
+    Redirect,
+    Request,
+    ViewEngine
+};
 
 class IndexController
 {
@@ -68,7 +67,4 @@ class IndexController
         }
         return redirect(route("panel"))->withMessage('message', "ورود موفقیت آمیز بود.");
     }
-
-
-
 }

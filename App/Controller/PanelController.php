@@ -3,16 +3,19 @@
 namespace Electro\App\Controller;
 
 use Electro\App\Model\Link;
-use Electro\Classes\Config;
-use Electro\Classes\Exception\ValidatorNotFoundException;
-use Electro\Classes\Redirect;
-use Electro\Classes\ViewEngine;
-use Shetabit\Multipay\Invoice;
-use Shetabit\Multipay\Payment;
+use Electro\Classes\{
+    Config,
+    Exception\ValidatorNotFoundException,
+    Redirect,
+    ViewEngine
+};
+use Shetabit\Multipay\{
+    Invoice,
+    Payment
+};
 
 class PanelController
 {
-
     /**
      * @return ViewEngine|Redirect
      */
