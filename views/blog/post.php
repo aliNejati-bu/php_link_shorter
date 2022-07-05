@@ -23,10 +23,10 @@
 <div class="main-menu">
     <div class="container">
         <ul>
-            <li><a href="#">صفحه اصلی</a></li>
-            <li><a href="#">مقالات</a></li>
-            <li><a href="#">تماس</a></li>
-            <li><a href="#">درباره</a></li>
+            <li><a href="<?= route("panel") ?>">صفحه اصلی</a></li>
+            <li><a href="<?= route("blog") ?>">مقالات</a></li>
+            <li><a href="#">تماس با ما</a></li>
+            <li><a href="<?= route("about") ?>">درباره</a></li>
         </ul>
     </div>
 </div>
@@ -57,48 +57,6 @@
                         مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه
                         درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری
                         را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. </p>
-                </div>
-                <div class="sidebar-social">
-                    <ul>
-                        <li>
-                            <a href="#" class="telegram"><i class="fa fa-send"></i>دنبال کردن در تلگرام</a>
-                        </li>
-                        <li>
-                            <a href="#" class="twitter"><i class="fa fa-twitter"></i>صفحه توئیتر ما</a>
-                        </li>
-                        <li>
-                            <a href="#" class="aparat"><i class="fa fa-video-camera"></i>دنبال کردن در آپارات</a>
-                        </li>
-                        <li>
-                            <a href="#" class="youtube"><i class="fa fa-youtube"></i>کانال یوتیوب</a>
-                        </li>
-                        <li>
-                            <a href="#" class="instagram"><i class="fa fa-instagram"></i>پیج اینستاگرام </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="category-sidebar">
-                    <span><i class="fa fa-bookmark"></i>دسته بندی مطالب</span>
-                    <ul>
-                        <li><a href="#">دنبال کردن در تلگرام</a></li>
-                        <li><a href="#">صفحه توئیتر ما</a></li>
-                        <li><a href="#">دنبال کردن در آپارات</a></li>
-                        <li><a href="#">کانال یوتیوب</a></li>
-                        <li><a href="#">پیج اینستاگرام</a></li>
-                    </ul>
-                </div>
-                <div class="category-sidebar ads-sidebar">
-                    <span><i class="fa fa-slack"></i>تبلیغات</span>
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <figure>
-                                    <img src="/img/ads/ads1.jpg" alt="">
-                                    <figcaption></figcaption>
-                                </figure>
-                            </a>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>

@@ -24,6 +24,9 @@
             <a href="<?= route("upgrade") ?>" class="btn btn-data">پرداخت و ارتقا به حساب کاربری (10000 تومان)</a>
             <a href="<?= route("createAdvanceLink") ?>" class="btn btn-data">ایجاد با slug دلخواه</a>
         </div>
+        <div class="btn-box" style="margin-top: 1rem">
+            <a href="<?= route("blog") ?>" class="btn btn-data">وبلاگ</a>
+        </div>
     </div>
 </div>
 <script src="/js/jquery-2.2.4.min.js"></script>

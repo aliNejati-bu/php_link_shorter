@@ -3,12 +3,7 @@
 namespace Electro\App\Controller;
 
 use Electro\App\Model\User;
-use Electro\Classes\{
-    Exception\ValidatorNotFoundException,
-    Redirect,
-    Request,
-    ViewEngine
-};
+use Electro\Classes\{Auth, Exception\ValidatorNotFoundException, Redirect, Request, ViewEngine};
 
 class IndexController
 {
@@ -66,5 +61,10 @@ class IndexController
             return redirect(back())->with("error", "نام کاربری و رمز عبور همخوانی ندارد.");
         }
         return redirect(route("panel"))->withMessage('message', "ورود موفقیت آمیز بود.");
+    }
+
+    public function getAbout(): ViewEngine
+    {
+        return view("about");
     }
 }

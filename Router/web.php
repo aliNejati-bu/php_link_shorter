@@ -54,6 +54,8 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
     });
 });
 
+
+
 $router->get("/blog", function () {
     return (new \Electro\App\Controller\BlogController())->index();
 });

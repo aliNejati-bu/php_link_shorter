@@ -17,6 +17,7 @@ return [
         'blog' => '/blog',
         'post' => '/blog/post/!-!',
         'upgrade' => '/panel/upgrade',
-        'verifyPr' => '/panel/verifyPr'
+        'verifyPr' => '/panel/verifyPr',
+        'about' => '/about',
     ],
 ];
