@@ -55,9 +55,12 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
             return (new \Electro\App\Controller\Admin\AdminController())->createPost();
         });
 
+        $router->get("/admin/post/delete/{id}", function ($id) {
+            return (new \Electro\App\Controller\Admin\AdminController())->deletePost($id);
+        });
+
     });
 });
-
 
 
 $router->get("/blog", function () {

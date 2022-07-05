@@ -1,4 +1,5 @@
 <?php
+
 namespace Electro\App\Controller\Admin;
 
 use Electro\App\Model\News;
@@ -43,7 +44,13 @@ class AdminController
     public function list()
     {
         $posts = News::all();
-        return view("panel>admin>postList",compact("posts"));
+        return view("panel>admin>postList", compact("posts"));
+    }
+
+    public function deletePost($id)
+    {
+        News::query()->where("id", "=", $id)->delete();
+        return \redirect(back())->withMessage("m", "پست با موفقیت حذف شد.");
     }
 
 }

@@ -15,6 +15,7 @@ return [
         'adminPanel' => '/panel/admin',
         'createPost' => '/panel/admin/createPost',
         'postList' => '/panel/admin/post-list',
+        'deletePost' => '/panel/admin/post/delete/!-!',
         'blog' => '/blog',
         'post' => '/blog/post/!-!',
         'upgrade' => '/panel/upgrade',

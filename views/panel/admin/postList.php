@@ -26,10 +26,11 @@
                         <td><?= $post->title ?></td>
                         <td><?= $post->content ?></td>
                         <td><img src="/<?= $post->image ?>" alt="" width="100%"></td>
-                        <td><a style="color: red" href="#">حذف</a></td>
+                        <td><a style="color: red" href="<?= route("deletePost",$post->id) ?>">حذف</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
+            <a href="<?= route("createPost") ?>" class="btn btn-data" style="margin-top: 3rem;width: 100%;color: #2F96B4;">ایجاد پست وبلاگ جدید</a>
         </div>
     </div>
 </div>
