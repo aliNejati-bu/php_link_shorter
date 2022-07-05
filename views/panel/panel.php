@@ -26,6 +26,7 @@
         </div>
         <div class="btn-box" style="margin-top: 1rem">
             <a href="<?= route("blog") ?>" class="btn btn-data">وبلاگ</a>
+            <a href="/panel/admin" class="btn btn-data">مدیریت</a>
         </div>
     </div>
 </div>

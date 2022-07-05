@@ -48,9 +48,13 @@ $router->group(["before" => ["authMiddleware"], "prefix" => route("panel")], fun
         $router->get("/admin/createPost", function () {
             return (new \Electro\App\Controller\Admin\AdminController())->createPostFront();
         });
+        $router->get("/admin/post-list", function () {
+            return (new \Electro\App\Controller\Admin\AdminController())->list();
+        });
         $router->post("/admin/createPost", function () {
             return (new \Electro\App\Controller\Admin\AdminController())->createPost();
         });
+
     });
 });
 

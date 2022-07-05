@@ -38,4 +38,12 @@ class AdminController
         News::query()->create($data);
         return redirect(back())->withMessage("m", "پست ایجاد.");
     }
+
+
+    public function list()
+    {
+        $posts = News::all();
+        return view("panel>admin>postList",compact("posts"));
+    }
+
 }

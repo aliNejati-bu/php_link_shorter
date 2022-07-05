@@ -15,6 +15,7 @@
         <h1>پنل مدیریت</h1>
         <div class="btn-box">
             <a href="<?= route("createPost") ?>" class="btn btn-data" style="margin-top: 3rem;width: 100%;color: #2F96B4;">ایجاد پست وبلاگ جدید</a>
+            <a href="<?= route("postList") ?>" class="btn btn-data" style="margin-top: 3rem;width: 100%;color: #2F96B4;">لیست پست ها</a>
         </div>
     </div>
 </div>
