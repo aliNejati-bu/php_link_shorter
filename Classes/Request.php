@@ -58,7 +58,7 @@ class Request
      */
     public function allPost(): array
     {
-        if (strtolower($this->headers()["Content-Type"]) == "application/json") {
+        if (isset($this->headers()["Content-Type"]) && strtolower($this->headers()["Content-Type"]) == "application/json") {
             return json_decode(file_get_contents('php://input'), true);
         } else {
             return $_POST + $_FILES;
