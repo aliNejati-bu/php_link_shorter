@@ -3,6 +3,9 @@
 namespace Electro\App\Controller;
 
 use Electro\App\Model\Link;
+use Electro\Classes\Config;
+use Electro\Classes\Exception\ValidatorNotFoundException;
+use JetBrains\PhpStorm\ArrayShape;
 
 class AppApi
 {
@@ -15,7 +18,11 @@ class AppApi
         }
     }
 
-    public function getStats($slug)
+    /**
+     * @param $slug
+     * @return array
+     */
+    #[ArrayShape(["status" => "bool", "messages" => "array", "data" => "mixed"])] public function getStats($slug): array
     {
         /**
          * @var Link $link
@@ -31,6 +38,31 @@ class AppApi
         return responseJson(true, ["ok"], [
             "daily" => $daily,
             "all" => $all
+        ]);
+    }
+
+    /**
+     * @return array
+     * @throws ValidatorNotFoundException
+     */
+    #[ArrayShape(["status" => "bool", "messages" => "array", "data" => "mixed"])] public function createLink(): array
+    {
+        request()->validatePostsAndFiles("createAdvanceLinkValidator");
+
+
+        if (!startsWith(request()->getValidated()["link"], "https://") && !startsWith(request()->getValidated()["link"], "http://")) {
+            $link = "https://" . request()->getValidated()["link"];
+        } else {
+            $link = request()->getValidated()["link"];
+        }
+        Link::query()->create([
+            "user_id" => auth()->userModel->id,
+            "slug" => request()->getValidated()["slug"],
+            "target" => $link
+        ]);
+        $config = Config::getInstance()->getAllConfig("app");
+        return responseJson(true, ["link Created."], [
+            "link" => $config["app_url"]."/".request()->getValidated()["slug"]
         ]);
     }
 }

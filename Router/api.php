@@ -13,4 +13,8 @@ $router->group(["before" => "apiAuthMiddleware"], function (RouteCollector $rout
     $router->get("/{slug}/stats", function ($slug) {
         return (new \Electro\App\Controller\AppApi())->getStats($slug);
     });
+
+    $router->post("/createLink", function () {
+        return (new \Electro\App\Controller\AppApi())->createLink();
+    });
 });

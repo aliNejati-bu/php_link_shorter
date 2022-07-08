@@ -2,15 +2,18 @@
 
 namespace Electro\App\Controller;
 
+use Electro\App\Model\Link;
 use Electro\Classes\Auth;
 use Electro\Classes\Exception\ValidatorNotFoundException;
+use JetBrains\PhpStorm\ArrayShape;
 
 class ApiAuth
 {
     /**
+     * @return array
      * @throws ValidatorNotFoundException
      */
-    public function login()
+    #[ArrayShape(["status" => "bool", "messages" => "array", "data" => "mixed"])] public function login(): array
     {
         request()->validatePostsAndFiles("loginApiValidator");
         $authInstance = new Auth();
@@ -21,4 +24,6 @@ class ApiAuth
         }
         return responseJson(true, ["login success."], ["token" => $loginResult]);
     }
+
+
 }
