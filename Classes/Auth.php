@@ -71,6 +71,41 @@ class Auth
         return $this;
     }
 
+    public function loginApiGetToken($email, $password): string|bool
+    {
+        $user = User::getUserByEmailAndPassword($email, $password);
+        if (!$user) {
+            return false;
+        }
+        return $this->createToken($user, true);
+    }
+
+    /**
+     * @param User $user
+     * @param bool $isLong
+     * @return string
+     */
+    private function createToken(User $user, bool $isLong = true): string
+    {
+        $authConfig = Config::getInstance()->getAllConfig("auth");
+
+        $key = $authConfig["jwt_key"];
+
+        $iat = time();
+        if ($isLong) {
+            $exp = $iat + $authConfig["token_life_time_in_long"];
+        } else {
+            $exp = $iat + $authConfig["token_life_time"];
+        }
+        $payload = [
+            'iat' => $iat,
+            'exp' => $exp,
+            'id' => $user->id
+        ];
+
+        return JWT::encode($payload, $key, $authConfig["jwt_alg"]);
+    }
+
     /**
      * @return Auth|null
      */
